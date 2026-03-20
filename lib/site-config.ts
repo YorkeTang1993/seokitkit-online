@@ -26,7 +26,7 @@ export const siteConfig = {
 
   // --- SEO & Verification ---
   googleAnalyticsId: '',
-  googleVerification: '',
+  googleVerification: 'DI6KZUqbTSEGZtlPln1ft456fUG3aIMIcPeGK9tlvMg',
   indexNowKey: '',
 
   // --- About page tagline ---
