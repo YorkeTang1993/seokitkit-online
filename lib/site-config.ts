@@ -6,7 +6,7 @@ export const siteConfig = {
   // --- Brand ---
   name: 'SEOKit',
   description: 'Free online SEO tools. Meta tag generators, schema markup builders, robots.txt creators, and more to boost your search rankings.',
-  domain: 'https://seokitkit-online.vercel.app',
+  domain: 'https://seokit.site',
   email: 'contact@seokitkit.online',
 
   // Header brand display: renders as "{text}{accent}{suffix}"
