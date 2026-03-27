@@ -29,6 +29,16 @@ export const siteConfig = {
   googleVerification: 'o2SQXAa4hamUGVAMEFboPJ6Bg7rWWYigqltPtyXkmaI',
   indexNowKey: '',
 
+  // --- Sister Sites (cross-linking network) ---
+  sisterSites: [
+    { name: 'ToolBox Online', url: 'https://toolboxhq.site', desc: 'General Tools' },
+    { name: 'DevToolKit', url: 'https://devutil.site', desc: 'Developer Tools' },
+    { name: 'CalcHub', url: 'https://calcbox.site', desc: 'Calculators' },
+    { name: 'ImageToolKit', url: 'https://imgtoolkit.site', desc: 'Image Tools' },
+    { name: 'CSSKit', url: 'https://csskit.site', desc: 'CSS Tools' },
+    { name: 'SEOKit', url: 'https://seokit.site', desc: 'SEO Tools' },
+  ],
+
   // --- About page tagline ---
   tagline: 'free, fast, and privacy-friendly SEO tools that work right in your browser.',
 };

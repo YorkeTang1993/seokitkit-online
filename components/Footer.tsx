@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-gray-200 bg-gray-50 mt-16">
       <div className="mx-auto max-w-6xl px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand + trust text */}
           <div>
             <p className="font-semibold text-gray-900 mb-2">{siteConfig.name}</p>
@@ -33,9 +33,20 @@ export default function Footer() {
             <nav className="flex flex-col gap-1.5 text-sm">
               <Link href="/about" className="text-gray-500 hover:text-gray-900">About</Link>
               <Link href="/privacy-policy" className="text-gray-500 hover:text-gray-900">Privacy Policy</Link>
-              <a href="https://github.com/YorkeTang1993/devtoolkit-online" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900">
-                GitHub
-              </a>
+            </nav>
+          </div>
+
+          {/* Sister Sites */}
+          <div>
+            <p className="font-semibold text-gray-900 mb-2">Our Network</p>
+            <nav className="flex flex-col gap-1.5 text-sm">
+              {siteConfig.sisterSites
+                .filter(s => s.url !== siteConfig.domain)
+                .map(site => (
+                  <a key={site.url} href={site.url} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900">
+                    {site.name}
+                  </a>
+                ))}
             </nav>
           </div>
         </div>
