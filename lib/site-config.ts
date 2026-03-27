@@ -41,4 +41,18 @@ export const siteConfig = {
 
   // --- About page tagline ---
   tagline: 'free, fast, and privacy-friendly SEO tools that work right in your browser.',
+
+  // --- Network Tools (cross-site tool links from OTHER sites) ---
+  networkTools: [
+    { name: 'JSON Formatter', url: 'https://toolboxhq.site/json-escape', site: 'ToolBox Online' },
+    { name: 'Hex to RGB', url: 'https://toolboxhq.site/hex-to-rgb', site: 'ToolBox Online' },
+    { name: 'JWT Decoder', url: 'https://devutil.site/jwt-decoder', site: 'DevToolKit' },
+    { name: 'UUID Generator', url: 'https://devutil.site/uuid-generator', site: 'DevToolKit' },
+    { name: 'eBay Fee Calculator', url: 'https://calcbox.site/ebay-fee-calculator', site: 'CalcHub' },
+    { name: 'Compound Interest Calculator', url: 'https://calcbox.site/compound-interest-calculator', site: 'CalcHub' },
+    { name: 'Image Resizer', url: 'https://imgtoolkit.site/image-resizer', site: 'ImageToolKit' },
+    { name: 'PNG to JPG', url: 'https://imgtoolkit.site/png-to-jpg-converter', site: 'ImageToolKit' },
+    { name: 'CSS Gradient Generator', url: 'https://csskit.site/css-gradient-generator', site: 'CSSKit' },
+    { name: 'CSS Grid Generator', url: 'https://csskit.site/css-grid-generator', site: 'CSSKit' },
+  ],
 };

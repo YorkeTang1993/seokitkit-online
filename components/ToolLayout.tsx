@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Tool } from '@/lib/tools';
 import { getRelatedTools } from '@/lib/tools';
 import { generateBreadcrumbJsonLd, generateHowToJsonLd, BASE_URL } from '@/lib/seo';
+import { siteConfig } from '@/lib/site-config';
 
 function WhatIsSection({ tool }: { tool: Tool }) {
   if (!tool.whatIs) return null;
@@ -78,6 +79,30 @@ function RelatedTools({ tool }: { tool: Tool }) {
   );
 }
 
+function ExploreMoreTools() {
+  const networkTools = siteConfig.networkTools;
+  if (!networkTools || networkTools.length === 0) return null;
+  const shuffled = [...networkTools].sort(() => 0.5 - Math.random()).slice(0, 6);
+  return (
+    <section className="mt-12">
+      <h2 className="text-xl font-bold text-gray-900 mb-4">Explore More Free Tools</h2>
+      <p className="text-gray-500 text-sm mb-4">Discover more tools from our network — all free, browser-based, and privacy-first.</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {shuffled.map(t => (
+          <a
+            key={t.url}
+            href={t.url}
+            className="p-4 rounded-lg border border-gray-200 hover:border-purple-300 hover:shadow-sm transition-all"
+          >
+            <h3 className="font-semibold text-gray-900">{t.name}</h3>
+            <p className="text-xs text-purple-600 mt-1">{t.site}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function ToolLayout({
   tool,
   children,
@@ -130,6 +155,7 @@ export default function ToolLayout({
       <UseCasesSection tool={tool} />
       <FAQSection faq={tool.faq} />
       <RelatedTools tool={tool} />
+      <ExploreMoreTools />
     </div>
   );
 }

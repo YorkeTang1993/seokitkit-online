@@ -49,6 +49,21 @@ export default function AboutPage() {
           <a href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</a> for more details.
         </p>
 
+        <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Our Tool Network</h2>
+        <p className="mb-4">
+          {SITE_NAME} is part of a growing network of free, browser-based tool sites. Each site focuses on a specific domain to give you the best experience:
+        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          {siteConfig.sisterSites
+            .filter(s => s.url !== siteConfig.domain)
+            .map(site => (
+              <li key={site.url}>
+                <a href={site.url} className="text-blue-600 hover:underline font-medium">{site.name}</a>
+                {' — '}{site.desc}
+              </li>
+            ))}
+        </ul>
+
         <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Built With</h2>
         <p>
           {SITE_NAME} is built with Next.js and Tailwind CSS, deployed on Vercel for maximum speed and reliability.

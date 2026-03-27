@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { tools, categories } from '@/lib/tools';
 import ToolCard from '@/components/ToolCard';
 import { BASE_URL, SITE_NAME, SITE_DESCRIPTION } from '@/lib/seo';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} - Free Online SEO Tools`,
@@ -78,6 +79,25 @@ export default function Home() {
             </section>
           );
         })}
+
+        <section className="mb-12 border-t border-gray-200 pt-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">More Free Tools</h2>
+          <p className="text-gray-500 mb-6">Explore specialized tools from our network — all free, browser-based, and privacy-first.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {siteConfig.sisterSites
+              .filter(s => s.url !== siteConfig.domain)
+              .map(site => (
+                <a
+                  key={site.url}
+                  href={site.url}
+                  className="p-5 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all"
+                >
+                  <h3 className="font-semibold text-gray-900">{site.name}</h3>
+                  <p className="text-sm text-gray-500 mt-1">{site.desc}</p>
+                </a>
+              ))}
+          </div>
+        </section>
       </div>
     </>
   );
