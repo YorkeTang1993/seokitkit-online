@@ -25,7 +25,7 @@ export const siteConfig = {
   ] as const,
 
   // --- SEO & Verification ---
-  googleAnalyticsId: '',
+  googleAnalyticsId: 'G-ZYPR9NKQT9',
   googleVerification: 'o2SQXAa4hamUGVAMEFboPJ6Bg7rWWYigqltPtyXkmaI',
   indexNowKey: '',
 
